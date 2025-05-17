@@ -1,0 +1,192 @@
+
+body{
+    background: #fa85d1;
+}
+aside{
+    float: left;
+    background: aqua;
+    width: 20%;
+    padding: 2.5%;
+    height: 100%;
+    color: antiquewhite;
+    border-right: 5px solid #4d4d4d;
+    position: fixed;
+}
+aside img{
+    width: 80px;
+    float: left;
+}
+aside .logo{
+    font-size: 40px;
+    margin-left: 10px;
+    font-weight: bold;
+}
+aside h3{
+    margin-top: 50px;
+    font-size: 28px;
+}
+
+aside ul{
+    list-style: none;
+}
+
+aside ul li{
+    color: #002bff;
+    display: block;
+    margin-top: 20px;
+    transition: transform .6s ease;
+}
+
+aside ul li:hover, aside ul a:hover{
+    color: #ff0000;
+    text-decoration: none;
+    transform: scale(1.05);
+}
+
+.as{
+    float: left;
+    color: #000000;
+    margin-top: 100px;
+    text-align: center;
+    width: 75%;
+    margin-left: 20%;
+}
+
+.as h1{font-size: 50px;}
+.as p{max-width: 400px; margin: 20px auto}
+
+
+.first {
+    border-radius: 0.25rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    background-image: url("fist.jpg");
+    background-size: cover;
+    background-position: center;
+    margin-left: 25%;
+    margin-right: 5%;
+    position: relative;
+}
+
+.first::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: inherit;
+    z-index: 1;
+}
+
+.text {
+    position: relative;
+    z-index: 2;
+    float: left;
+    color: #ffffff;
+    margin-top: 100px;
+    text-align: center;
+    width: 75%;
+}
+.text_2{
+    z-index: 2;
+}
+.text_3 {
+    position: relative;
+    z-index: 2;
+    float: left;
+    color: #000000;
+    margin-top: 100px;
+    text-align: center;
+    width: 75%;
+}
+.second{
+    margin-left: 25%;
+    margin-right: 5%;
+    background-color: #f4f4f4;
+    border-radius: 0.25rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+}
+
+:root {
+    --pink-text-color: #c700b0;
+    --light-pink-bg: #fbe8fa;
+}
+
+.main-heading {
+    color: var(--pink-text-color);
+}
+
+.content-block {
+    background-color: var(--light-pink-bg);
+    border: 1px solid #f0d1f1;
+}
+
+.block-heading {
+    color: var(--pink-text-color);
+    font-weight: bold;
+}
+
+.block-text {
+     color: #333;
+}
+
+.plus-icon {
+    color: var(--pink-text-color);
+    font-size: 1.2rem;
+}
+
+.content-block .d-flex span {
+    color: var(--pink-text-color);
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.container {
+    margin-left: 25%;
+}
+
+
+
+
+
+
+
+
+.skills-container {
+    background-color: #e9bbf3;
+    border: 4px solid #cce0ff;
+    border-radius: 15px;
+    padding: 20px;
+    margin-left: 25%;
+    margin-right: 5%;
+}
+
+.skills-container h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: left;
+    color: #343a40;
+}
+
+.skill-card {
+    background-color: #eaf4ff;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 15px;
+     border: none;
+}
+
+.skill-card h3 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #e800ff;
+}
+
+.skill-card p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #5a6268;
+}

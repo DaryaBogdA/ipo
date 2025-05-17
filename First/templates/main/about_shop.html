@@ -1,0 +1,95 @@
+{% extends 'main/shablon.html' %}
+{% load static %}
+{% block content %}
+<br>
+    <div class="first d-flex flex-column align-items-center justify-content-center">
+    <div class="text text-white text-center">
+        <h2>Обзор интернет-магазина Portative.by:</h2>
+    </div>
+    <p class="text_2 text-light text-center fw-bold mt-3">
+        Portative.by — специализированный интернет-магазин портативной техники в Беларуси. Здесь вы найдете разнообразные наушники, портативные колонки, аудиоплееры и аксессуары от ведущих брендов. Магазин предлагает удобный сервис, выгодные цены и быстрые способы доставки по всей стране.
+    </p>
+</div>
+
+    <div class="container my-4">
+    <h1 class="main-heading mb-4">
+        Удобство использования сайта: навигация, поиск, информация о товарах
+    </h1>
+
+    <div class="content-block p-3 mb-3 rounded">
+        <div class="d-flex justify-content-between align-items-center">
+             <h2 class="block-heading h5 mb-2">Интуитивный дизайн</h2>
+        </div>
+        <p class="block-text mb-0">Сайт адаптирован под мобильные устройства, с простой и логичной структурой меню.</p>
+    </div>
+
+    <div class="content-block p-3 mb-3 rounded">
+         <div class="d-flex justify-content-between align-items-center">
+            <h2 class="block-heading h5 mb-2">Функциональный поиск</h2>
+        </div>
+        <p class="block-text mb-0">Фильтры по цене, бренду и характеристикам облегчают выбор нужного устройства.</p>
+    </div>
+
+    <div class="content-block p-3 mb-3 rounded">
+        <h2 class="block-heading h5 mb-2">Подробные карточки товаров</h2>
+        <p class="block-text mb-0">Точный список характеристик, качественные фото и отзывы покупателей помогают принимать решения.</p>
+    </div>
+
+    <div class="content-block p-3 mb-3 rounded">
+        <div class="d-flex justify-content-between align-items-center">
+            <h2 class="block-heading h5 mb-2">Простое оформление заказа</h2>
+        </div>
+        <p class="block-text mb-0">Быстрая регистрация, удобный выбор способа оплаты и доставки ускоряют шопинг.</p>
+    </div>
+
+</div>
+
+<div class="second g-dark text-black p-4 rounded shadow text-center">
+    <h2 class="text-dark text-center fw-bold">Ассортимент товаров на Portative.by</h2>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item bg-transparent text-dark fw-bold"><i class="fa-solid fa-laptop"></i> Ноутбуки и компьютеры: Различные модели для работы, учебы, игр, а также аксессуары (сумки, мыши, клавиатуры).</li>
+        <li class="list-group-item bg-transparent text-dark"><i class="fa-solid fa-mobile-screen-button"></i> Смартфоны и гаджеты: Широкий спектр моделей от ведущих производителей, фитнес-браслеты, умные часы.</li>
+        <li class="list-group-item bg-transparent text-dark fw-bold"><i class="fa-solid fa-tablet"></i> Планшеты и электронные книги: Устройства разных диагоналей, чехлы и аксессуары.</li>
+        <li class="list-group-item bg-transparent text-dark"><i class="fa-solid fa-headphones"></i> Аудиотехника: Наушники (проводные, беспроводные), портативные колонки, домашние аудиосистемы.</li>
+        <li class="list-group-item bg-transparent text-dark fw-bold"><i class="fa-solid fa-camera"></i> Фото- и видеотехника: Фотоаппараты, видеокамеры, экшн-камеры, объективы, штативы, карты памяти.</li>
+        <li class="list-group-item bg-transparent text-dark"><i class="fa-solid fa-gamepad"></i> Игровые приставки и аксессуары: PlayStation, Xbox, Nintendo, игры, джойстики, VR-устройства.</li>
+        <li class="list-group-item bg-transparent text-dark fw-bold"><i class="fa-solid fa-phone"></i> Аксессуары: Кабели, адаптеры, зарядные устройства, Power Bank'и, чехлы, защитные пленки, компьютерная периферия.</li>
+    </ul>
+</div>
+    <div class="container my-4">
+        <div class="row">
+            <div class="col-md-4 d-flex align-items-center">
+                <img src="{% static 'main/img/mob.jpg' %}" class="img-fluid rounded shadow">
+            </div>
+
+            <div class="col-md-8">
+                <h1 class="main-heading mb-4 ms-3">Итог: стоит ли покупать на Portative.by?</h1>
+
+                <div class="content-block p-3 mb-3 rounded ms-3">
+                    <h2 class="block-heading h5 mb-1">Широкий ассортимент</h2>
+                    <p class="block-text mb-0">От наушников до аксессуаров — выбор для разных предпочтений и бюджетов.</p>
+                </div>
+
+                <div class="content-block p-3 mb-3 rounded ms-3">
+                    <h2 class="block-heading h5 mb-1">Выгодные цены и акции</h2>
+                    <p class="block-text mb-0">Конкурентные цены, регулярные скидки и бонусы делают покупки привлекательными.</p>
+                </div>
+
+                <div class="content-block p-3 mb-3 rounded ms-3">
+                    <h2 class="block-heading h5 mb-1">Удобство и сервис</h2>
+                    <p class="block-text mb-0">Простой сайт, быстрая доставка и поддержка клиентов обеспечивают комфортное приобретение.</p>
+                </div>
+
+                <div class="content-block p-3 mb-3 rounded ms-3">
+                    <h2 class="block-heading h5 mb-1">Рекомендации</h2>
+                    <p class="block-text mb-0">Обращайте внимание на условия возврата и пользуйтесь программой лояльности для максимальной выгоды.</p>
+                </div>
+
+                <p class="conclusion-text mt-4 ms-3">
+                    В общем и целом, Portative.by — хороший выбор, если вы цените качественную портативную аудиотехнику и сервис по доступной цене.
+                </p>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
