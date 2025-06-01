@@ -1,0 +1,43 @@
+{% extends 'main/shablon.html' %}
+{% load static %}
+{% block content %}
+    {% if skill %}
+        <br>
+        <div class="container">
+            <div class="card">
+                <div class="card-header text-white" style="background-color: #dc57f8">
+                    <h2 class="mb-0">{{ skill.title }}</h2>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p class="lead"><strong>Код квалификации:</strong> {{ skill.code }}</p>
+                            {% if skill.desc %}
+                                <div class="mt-4">
+                                    <h4>Описание:</h4>
+                                    {{ skill.desc|safe|linebreaks }}
+                                </div>
+                            {% endif %}
+                            {% if skill.searchtag %}
+                                <div class="mt-3">
+                                    <strong>Теги:</strong> {{ skill.searchtag }}
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <a href="{% url 'spec' %}" class="btn btn-secondary">Назад</a>
+                </div>
+            </div>
+        </div>
+    {% else %}
+        <div class="container mt-5">
+            <div class="alert alert-danger" role="alert">
+                <p>Нет такой квалификации</p>
+                <hr>
+                <a href="{% url 'spec' %}" class="btn btn-outline-danger">Назад</a>
+            </div>
+        </div>
+    {% endif %}
+{% endblock %} 

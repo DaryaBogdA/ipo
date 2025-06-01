@@ -1,0 +1,17 @@
+{% extends 'main/shablon.html' %}
+{% load static %}
+{% block content %}
+    <h1 class="mb-4" style="margin-left: 45%; max-width: 50%;">Список квалификаций</h1>
+    <div class="container-fluid text-center py-5" style="margin-left: 30%; max-width: 50%; background-color: white; padding: 20px; border-radius: 10px;">
+        <ul class="list-group list-group-flush">
+            {% for skill in skills %}
+                <li class="list-group-item" style="background-color: #f8d7da; margin-bottom: 10px; padding: 15px; border-radius: 5px;">
+                    <a href="{% url 'skill_detail' skill.id %}" class="text-decoration-none text-dark">
+                        {{ skill.title }}
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+{% endblock %}
