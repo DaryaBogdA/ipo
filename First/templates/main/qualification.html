@@ -2,6 +2,16 @@
 {% load static %}
 {% block content %}
     <h1 class="mb-4" style="margin-left: 45%; max-width: 50%;">Список квалификаций</h1>
+    
+    <div class="container mb-4" style="max-width: 400px;">
+        <div class="input-group">
+            <input type="number" class="form-control" id="skillId" placeholder="Введите ID квалификации" min="1">
+            <div class="input-group-append">
+                <button class="btn btn-danger" onclick="goToSkill()">Найти</button>
+            </div>
+        </div>
+    </div>
+
     <div class="container-fluid text-center py-5" style="margin-left: 30%; max-width: 50%; background-color: white; padding: 20px; border-radius: 10px;">
         <ul class="list-group list-group-flush">
             {% for skill in skills %}
@@ -14,4 +24,20 @@
         </ul>
     </div>
 
+    <script>
+        function goToSkill() {
+            const skillId = document.getElementById('skillId').value;
+            if (skillId) {
+                window.location.href = `/spec/${skillId}/`;
+            } else {
+                alert('Введите ID квалификации');
+            }
+        }
+
+        document.getElementById('skillId').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                goToSkill();
+            }
+        });
+    </script>
 {% endblock %}
