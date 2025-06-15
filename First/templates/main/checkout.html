@@ -1,0 +1,23 @@
+{% extends 'main/shablon.html' %}
+{% load static %}
+{% block content %}
+    <div class="login-wrapper">
+        <div class="registration-container fade-in">
+            <h2>Оформление заказа</h2>
+            <form method="post">
+                {% csrf_token %}
+                <div>
+                    <label for="address">Адрес доставки:</label>
+                    <input type="text" name="address" id="address" required>
+                </div>
+
+                <div>
+                    <label for="email">Электронная почта:</label>
+                    <input type="email" name="email" id="email" required>
+                </div>
+
+                <button type="submit">Подтвердить заказ</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}

@@ -98,6 +98,9 @@
                                 <span class="fw-bold">К оплате</span>
                                 <span class="fw-bold">{{ total_price }} ₽</span>
                             </div>
+                            <a href="{% url 'checkout' %}" class="btn btn-primary w-100 mb-3">
+                                Оформить заказ
+                            </a>
                             <a href="{% url 'catalog' %}" class="btn btn-outline-secondary w-100">
                                 Продолжить покупки
                             </a>
