@@ -1,0 +1,12 @@
+{% extends 'main/shablon.html' %}
+{% load static %}
+{% block title %} {{ product.name }} {% endblock %}
+{% block content %}
+    <div class="product-container">
+        <h1>{{ product.name }}</h1>
+        <img src="{{ product.photo.url }}" alt="{{ product.name }}" class="product-image">
+        <p class="product-description">{{ product.text }}</p>
+        <p class="product-price">Цена: {{ product.price }} руб.</p>
+        <a href="{% url 'catalog' %}" class="btn btn-secondary">Назад</a>
+    </div>
+{% endblock %}

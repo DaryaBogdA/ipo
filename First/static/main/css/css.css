@@ -147,13 +147,6 @@ aside ul li:hover, aside ul a:hover{
     margin-left: 25%;
 }
 
-
-
-
-
-
-
-
 .skills-container {
     background-color: #e9bbf3;
     border: 4px solid #cce0ff;
@@ -175,7 +168,7 @@ aside ul li:hover, aside ul a:hover{
     border-radius: 10px;
     padding: 15px;
     margin-bottom: 15px;
-     border: none;
+    border: none;
 }
 
 .skill-card h3 {
@@ -190,3 +183,259 @@ aside ul li:hover, aside ul a:hover{
     line-height: 1.5;
     color: #5a6268;
 }
+
+
+.catalog-container {
+    margin-left: 20%;
+    padding: 20px;
+}
+
+.filter-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.filter-form input,
+.filter-form select,
+.filter-form button {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.filter-form button {
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+}
+
+.filter-form button:hover {
+    background-color: #0056b3;
+}
+
+.product-list {
+    list-style: none;
+    padding: 0;
+}
+
+.product-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.product-name {
+    font-weight: bold;
+    text-decoration: none;
+    color: #000000;
+    transition: color 0.3s ease;
+}
+
+.product-name:hover {
+    color: #0028ff;
+}
+.product-price {
+    text-align: right;
+    font-weight: bold;
+    color: #ff0000;
+}
+
+.no-products {
+    color: #ff0000;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 19px;
+    text-align: left;
+}
+
+.product-container {
+    margin-left: 25%;
+    padding: 20px;
+    text-align: center;
+    max-width: 70%;
+}
+
+.product-image {
+    width: 300px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.product-description {
+    max-width: 600px;
+    margin: 20px auto;
+    font-size: 18px;
+    color: #333;
+}
+
+.product-price {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ff0000;
+}
+
+
+.gradient-wrapper {
+    margin-left: 260px;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    background: none;
+}
+
+.registration-container {
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 35px;
+    width: 520px;
+    max-width: 90vw;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+    animation: fadeIn 0.8s ease forwards;
+}
+
+.registration-container label {
+    font-size: 16px;
+    font-weight: 500;
+    margin-top: 12px;
+    display: block;
+    color: #444;
+}
+
+.registration-container input[type="text"],
+.registration-container input[type="email"],
+.registration-container input[type="tel"],
+.registration-container input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 15px;
+    margin: 5px 0 15px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    transition: border-color 0.2s;
+    color: #000000;
+}
+
+.registration-container input:focus {
+    border-color: #b84aff;
+    outline: none;
+}
+
+.btn_style {
+    background-color: #ff00b2;
+    color: #fff;
+    font-weight: bold;
+    font-size: 16px;
+    border: none;
+    border-radius: 25px;
+    padding: 12px 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: block;
+    margin: 20px auto 0;
+}
+
+.btn_style:hover {
+    background-color: #ec65c6;
+}
+
+.password-container {
+    position: relative;
+}
+
+.password-container input {
+    padding-right: 40px;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 18px;
+    color: #000000;
+    user-select: none;
+    pointer-events: auto;
+}
+.login-wrapper {
+    margin-left: 260px;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    box-sizing: border-box;
+    background: none;
+}
+
+.fade-in {
+    animation: fadeIn 0.8s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.auth-header {
+    position: fixed;
+    top: 0;
+    left: 20%;
+    right: 0;
+    height: 60px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0 20px;
+    background-color: aqua;
+    border-bottom: 5px solid #4d4d4d;
+    z-index: 1000;
+}
+
+.auth-header .welcome-text {
+    font-weight: bold;
+    color: #333;
+}
+.error-text {
+    color: #ff0700;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+.field-error {
+    color: #ff0a00;
+    font-size: 13px;
+    list-style: none;
+    margin: -10px 0 10px 0;
+    min-height: 18px;
+}
+ .custom-alert {
+      color: #dc3545; /* красный Bootstrap */
+      background-color: #fff5f5;
+      border: 1px solid #dc3545;
+      border-radius: 4px;
+      padding: 10px 15px;
+      margin: 10px auto;
+      width: fit-content;
+      opacity: 0;
+      transform: translateY(-10px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    .custom-alert.show {
+      opacity: 1;
+      transform: translateY(0);
+    }

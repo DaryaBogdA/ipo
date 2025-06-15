@@ -1,0 +1,104 @@
+{% extends 'main/shablon.html' %}
+{% load static %}
+{% block content %}
+
+    <div class="catalog-container">
+        <section class="catalog">
+            <h2>Каталог товаров</h2>
+            {% if messages %}
+                <div id="message-container">
+                    {% for message in messages %}
+                        <div class="alert alert-{{ message.tags }} custom-alert fade-in"
+                             role="alert">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+            <form method="GET" class="filter-form">
+                <input
+                        type="text"
+                        name="search"
+                        placeholder="Поиск..."
+                        value="{{ request.GET.search }}"
+                >
+                <button type="submit">Найти</button>
+
+                <select name="category" onchange="this.form.submit()">
+                    <option value="">Все категории</option>
+                    {% for category in categories %}
+                        <option
+                                value="{{ category.id }}"
+                                {% if request.GET.category == category.id|stringformat:"s" %}selected{% endif %}
+                        >
+                            {{ category.name }}
+                        </option>
+                    {% endfor %}
+                </select>
+
+                <select name="producer" onchange="this.form.submit()">
+                    <option value="">Все производители</option>
+                    {% for producer in producers %}
+                        <option
+                                value="{{ producer.id }}"
+                                {% if request.GET.producer == producer.id|stringformat:"s" %}selected{% endif %}
+                        >
+                            {{ producer.name }}
+                        </option>
+                    {% endfor %}
+                </select>
+
+            </form>
+
+
+            <ul class="product-list">
+                {% for product in products %}
+                    <li class="product-item">
+                        <a href="{% url 'product_detail' product.id %}"
+                           class="product-name">
+                            {{ product.name }}
+                        </a>
+                        <span class="product-price">{{ product.price }} руб.</span>
+                        <form method="POST"
+                              action="{% url 'add_to_cart' product.id %}"
+                              class="add-to-cart-form"
+                              data-stock="{{ product.stock_left }}">
+                            {% csrf_token %}
+                            <button type="submit">
+                                Добавить в корзину
+                            </button>
+                        </form>
+                    </li>
+                {% empty %}
+                    <li class="no-products">Товары не найдены</li>
+                {% endfor %}
+            </ul>
+        </section>
+    </div>
+
+    <script>
+        document.querySelectorAll('.filter-form select, .filter-form input[name="search"]')
+            .forEach(el => {
+                el.addEventListener('change', () => {
+                    if (el.form) el.form.requestSubmit();
+                });
+            });
+        document.addEventListener('DOMContentLoaded', () => {
+            const alerts = document.querySelectorAll('.custom-alert');
+            alerts.forEach(alert => {
+                setTimeout(() => {
+                    alert.classList.add('show');
+                }, 100);
+
+                setTimeout(() => {
+                    alert.classList.remove('show');
+                }, 2100);
+
+                setTimeout(() => {
+                    alert.remove();
+                }, 2600);
+            });
+        });
+    </script>
+
+{% endblock %}

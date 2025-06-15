@@ -9,22 +9,47 @@
     <link rel="stylesheet" href="{% static 'main/css/css.css' %}">
 </head>
 <body>
+<header class="auth-header">
+    {% if user.is_authenticated %}
+        <span class="welcome-text">Привет, {{ user.username }}!</span>
+        <form action="{% url 'logout' %}" method="post" style="display: inline;">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-outline-danger btn-sm ms-3">Выйти</button>
+            <a href="{% url 'cart_view' %}" class="btn btn-outline-primary btn-sm me-2">Корзина<i
+                    class="fa-solid fa-cart-shopping"></i></a>
+        </form>
+    {% else %}
+        <a href="{% url 'login' %}" class="btn btn-outline-primary btn-sm me-2">Войти</a>
+        <a href="{% url 'registration' %}" class="btn btn-outline-success btn-sm">Регистрация</a>
+    {% endif %}
+</header>
 
-    <aside>
-        <img src="{% static 'main/img/img.png' %}">
-        <span class="logo">Я люблю мир</span>
-        <h3>Навигация</h3>
-        <ul>
-            <a href="{% url 'home' %}"><li><i class="fa-solid fa-house"></i>Главная</li></a>
-            <a href="{% url 'about_i' %}"><li><i class="fa-solid fa-person-dress"></i>Про меня</li></a>
-            <a href="{% url 'about_shop' %}"><li><i class="fa-solid fa-shop"></i>Про магазин</li></a>
-            <a href="{% url 'spec' %}"><li><i class="fa-solid fa-shop"></i>Квалификации</li></a>
+<aside>
+    <img src="{% static 'main/img/img.png' %}">
+    <span class="logo">Я люблю мир</span>
+    <h3>Навигация</h3>
+    <ul>
+        <a href="{% url 'home' %}">
+            <li><i class="fa-solid fa-house"></i>Главная</li>
+        </a>
+        <a href="{% url 'about_i' %}">
+            <li><i class="fa-solid fa-person-dress"></i>Про меня</li>
+        </a>
+        <a href="{% url 'about_shop' %}">
+            <li><i class="fa-solid fa-shop"></i>Про магазин</li>
+        </a>
+        <a href="{% url 'spec' %}">
+            <li><i class="fa-solid fa-clipboard"></i>Квалификации</li>
+        </a>
+        <a href="{% url 'catalog' %}">
+            <li><i class="fa-solid fa-tag"></i></i>Каталог товаров</li>
+        </a>
 
-        </ul>
-    </aside>
-    <main>
-        {% block content %}
-        {% endblock %}
-    </main>
+    </ul>
+</aside>
+<main>
+    {% block content %}
+    {% endblock %}
+</main>
 </body>
 </html>
