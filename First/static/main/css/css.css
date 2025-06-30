@@ -6,7 +6,8 @@ aside{
     float: left;
     background: aqua;
     width: 20%;
-    padding: 2.5%;
+    padding: 2%;
+    min-width: 180px;
     height: 100%;
     color: antiquewhite;
     border-right: 5px solid #4d4d4d;
@@ -251,14 +252,16 @@ aside ul li:hover, aside ul a:hover{
 }
 
 .product-container {
-    margin-left: 25%;
-    padding: 20px;
+    margin-left: 15%;
+    padding: 3%;
     text-align: center;
-    max-width: 70%;
+    max-width: 100%;
+    width: 90%;
+    box-sizing: border-box;
 }
 
 .product-image {
-    width: 300px;
+    width: 20%;
     height: auto;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -333,10 +336,10 @@ aside ul li:hover, aside ul a:hover{
     background-color: #ff00b2;
     color: #fff;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 1.1em;
     border: none;
     border-radius: 25px;
-    padding: 12px 30px;
+    padding: 1em 5%;
     cursor: pointer;
     transition: background-color 0.3s ease;
     display: block;

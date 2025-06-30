@@ -1,9 +1,28 @@
-from django.urls import path
+from django.urls import path, include
 from . import views
 from django.contrib.auth.views import LoginView, LogoutView
+from rest_framework.routers import DefaultRouter
+from .views import (
+    ProductViewSet,
+    ProductCategoryViewSet,
+    ProducerViewSet,
+    CartViewSet,
+    CartItemViewSet
+)
+
+router = DefaultRouter()
+router.register(r'products', ProductViewSet)
+router.register(r'categories', ProductCategoryViewSet)
+router.register(r'producers', ProducerViewSet)
+router.register(r'carts', CartViewSet, basename='cart')
+router.register(r'cart_items', CartItemViewSet, basename='cartitem')
 
 urlpatterns = [
     path('', views.index, name='home'),
+    path('api/', include(router.urls)),
+    path('api-auth/', include('rest_framework.urls')),
+    path('api/test-auth/', views.test_auth, name='test_auth'),
+    path('api/test-public/', views.public_test, name='public_test'),
     path('about_i', views.about_i, name='about_i'),
     path('about_shop', views.about_shop, name='about_shop'),
     path('spec/', views.spec, name='spec'),

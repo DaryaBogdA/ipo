@@ -6,11 +6,23 @@ from django.db.models import Q, Sum
 from django.contrib.auth.models import User
 from django.contrib.auth import login
 from django.contrib import messages
-from .models import Product, Producer, ProductCategory, Cart, CartItem
 from django.views.generic import DetailView
 import tempfile
 from django.core.mail import EmailMessage
 from openpyxl import Workbook
+from rest_framework.viewsets import ModelViewSet
+from rest_framework.permissions import AllowAny, IsAuthenticated
+from rest_framework.decorators import api_view, permission_classes
+from rest_framework.response import Response
+from rest_framework import status
+from .models import Product, ProductCategory, Producer, Cart, CartItem
+from .serializers import (
+    ProductSerializer,
+    ProductCategorySerializer,
+    ProducerSerializer,
+    CartSerializer,
+    CartItemSerializer
+)
 
 def index(request):
     return render(request, 'main/home.html')
@@ -251,7 +263,58 @@ def checkout(request):
         'cart_items': cart_items,
     })
 
+class ProductViewSet(ModelViewSet):
+    queryset = Product.objects.all()
+    serializer_class = ProductSerializer
+    permission_classes = [IsAuthenticated]
 
+
+class ProductCategoryViewSet(ModelViewSet):
+    queryset = ProductCategory.objects.all()
+    serializer_class = ProductCategorySerializer
+    permission_classes = [IsAuthenticated]
+
+
+class ProducerViewSet(ModelViewSet):
+    queryset = Producer.objects.all()
+    serializer_class = ProducerSerializer
+    permission_classes = [IsAuthenticated]
+
+
+class CartViewSet(ModelViewSet):
+    serializer_class = CartSerializer
+    permission_classes = [IsAuthenticated]
+    
+    def get_queryset(self):
+        return Cart.objects.filter(user=self.request.user)
+
+
+class CartItemViewSet(ModelViewSet):
+    serializer_class = CartItemSerializer
+    permission_classes = [IsAuthenticated]
+    
+    def get_queryset(self):
+        return CartItem.objects.filter(cart__user=self.request.user)
+
+
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def test_auth(request):
+    """Тестовый endpoint для проверки аутентификации"""
+    return Response({
+        'message': 'Аутентификация работает!',
+        'user': request.user.username,
+        'is_authenticated': request.user.is_authenticated
+    })
+
+@api_view(['GET'])
+@permission_classes([AllowAny])
+def public_test(request):
+    """Публичный endpoint для тестирования"""
+    return Response({
+        'message': 'Публичный API работает!',
+        'user': request.user.username if request.user.is_authenticated else 'Anonymous'
+    })
 
 
 
